@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::<AWS_ACCOUNT_ID>:oidc-provider/<OIDC_PROVIDER>"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.eks.us-east-1.amazonaws.com/id/343D115C9BF04CAD22B5928045E9EA4D:sub": "system:serviceaccount:<K8S_NAMESPACE>:<K8S_SERVICE_ACCOUNT>",
+          "oidc.eks.us-east-1.amazonaws.com/id/343D115C9BF04CAD22B5928045E9EA4D:aud": "sts.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

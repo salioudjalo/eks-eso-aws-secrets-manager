@@ -24,8 +24,6 @@ Before starting, ensure you have:
 - ✅ IAM permissions to create roles, policies, and OIDC providers
 - ✅ eksctl installed (for OIDC provider setup)
 
-See [docs/01-prerequisites.md](docs/01-prerequisites.md) for detailed setup.
-
 ## Quick start
 
 This is the high-level flow. For detailed steps, see the documentation chapters.
@@ -85,7 +83,7 @@ Option B: Mounted files
 ```bash
 kubectl apply -f manifests/03-deployment/deployment-volume.yaml
 ```
-##Step-by-step documentation
+## Step-by-step documentation
 For detailed explanations and troubleshooting, see:
 
 1. Prerequisites — what you need before starting
@@ -149,7 +147,7 @@ volumes:
 Pros: More secure, files can update without restart
 Cons: App must read from files
 
-##Security notes
+## Security notes
 - ✅ Secrets are encrypted in AWS Secrets Manager
 - ✅ IRSA uses temporary credentials (no long-lived keys)
 - ✅ IAM policy follows least privilege principle

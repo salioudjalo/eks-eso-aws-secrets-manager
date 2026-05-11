@@ -12,39 +12,6 @@ This repository documents and provides manifests for a production-ready setup wh
 4. ESO automatically syncs secrets into Kubernetes `Secret` objects
 5. Your applications consume those secrets as environment variables or mounted files
 
-## What this repo contains
-```bash
-eks-eso-aws-secrets-manager/
-├── README.md                          # This file
-├── docs/                              # Step-by-step documentation
-│   ├── 01-prerequisites.md
-│   ├── 02-aws-secret.md
-│   ├── 03-iam-policy-and-role.md
-│   ├── 04-irsa-and-oidc.md
-│   ├── 05-install-eso.md
-│   ├── 06-secret-store.md
-│   ├── 07-external-secret.md
-│   ├── 08-consume-secret-in-app.md
-│   ├── 09-troubleshooting.md
-│   └── 10-cleanup.md
-├── manifests/                         # Kubernetes YAML files
-│   ├── 01-secret-store/
-│   │   └── cluster-secret-store.yaml
-│   ├── 02-external-secret/
-│   │   └── external-secret.yaml
-│   ├── 03-deployment/
-│   │   ├── deployment-envvar.yaml
-│   │   └── deployment-volume.yaml
-│   └── examples/
-│       └── aws-secret-example.json
-├── iam/                               # AWS IAM policy documents
-│   ├── eso-policy.json
-│   └── trust-policy.json
-└── scripts/                           # Helper scripts
-    ├── get-oidc-provider.sh
-    └── verify-setup.sh
-```
-
 ## Prerequisites
 
 Before starting, ensure you have:
@@ -63,7 +30,7 @@ See [docs/01-prerequisites.md](docs/01-prerequisites.md) for detailed setup.
 
 This is the high-level flow. For detailed steps, see the documentation chapters.
 
-### 1. Create a secret in AWS Secrets Manager
+1. Create a secret in AWS Secrets Manager
 ```bash
 aws secretsmanager create-secret \
   --name prod/frontend \

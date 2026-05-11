@@ -13,7 +13,7 @@ This repository documents and provides manifests for a production-ready setup wh
 5. Your applications consume those secrets as environment variables or mounted files
 
 ## Architecture
-
+```bash
 ┌─────────────────────────────────────────────────────────────┐
 │ AWS Account                                                 │
 │                                                             │
@@ -84,10 +84,10 @@ This repository documents and provides manifests for a production-ready setup wh
 │  │  └────────────────────────────────────────────────┘ │  │
 │  └──────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
-
+```
 
 ## What this repo contains
-
+```bash
 eks-eso-aws-secrets-manager/
 ├── README.md                          # This file
 ├── docs/                              # Step-by-step documentation
@@ -117,7 +117,7 @@ eks-eso-aws-secrets-manager/
 └── scripts/                           # Helper scripts
     ├── get-oidc-provider.sh
     └── verify-setup.sh
-
+```
 
 ## Prerequisites
 
